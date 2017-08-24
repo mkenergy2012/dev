@@ -1,4 +1,4 @@
-﻿
+--new update
 
 DECLARE @DATABASE_SOURCE AS VARCHAR(30)
 SET @DATABASE_SOURCE = 'DW_CRM_MIGRATION' -- EX: AdventureWorks
@@ -22,18 +22,18 @@ INTO @TABLE_NAME
 
 DECLARE @SQL AS VARCHAR(MAX)
 
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
+????WHILE @@FETCH_STATUS = 0
+????BEGIN
 
 
-        --PART 1 DROP OBJECT
-        SELECT @SQL = N'IF OBJECT_ID (''['+ @TABLE_NAME + ']'') IS NOT NULL 
+????????--PART 1 DROP OBJECT
+????????SELECT @SQL = N'IF OBJECT_ID (''['+ @TABLE_NAME + ']'') IS NOT NULL 
 BEGIN
 DROP  TABLE '+@TABLE_NAME+' END' +  CHAR(13) + CHAR(10) +
-                    'SELECT TOP 0 * INTO '+@TABLE_NAME+' FROM '+@DATABASE_SOURCE+'.dbo.'+@TABLE_NAME   
-                        
-        
-        --PRINT @SQL
+????????????????????'SELECT TOP 0 * INTO '+@TABLE_NAME+' FROM '+@DATABASE_SOURCE+'.dbo.'+@TABLE_NAME   
+????????????????????????
+????????
+????????--PRINT @SQL
          SET @SQL=REPLACE(@SQL, '''', '''''');
 		 SET @STRSQL = N'EXEC '+@DATABASE_TARGET+'.dbo.sp_executesql N''' + @SQL + '''';
         
@@ -43,9 +43,9 @@ DROP  TABLE '+@TABLE_NAME+' END' +  CHAR(13) + CHAR(10) +
 	
 			
 
-     FETCH NEXT FROM JOB_CURSOR
-     INTO @TABLE_NAME
-    END
+???? FETCH NEXT FROM JOB_CURSOR
+???? INTO @TABLE_NAME
+????END
 
 CLOSE JOB_CURSOR
 DEALLOCATE JOB_CURSOR
