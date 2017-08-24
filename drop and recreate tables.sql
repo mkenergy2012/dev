@@ -1,4 +1,5 @@
 --new update
+-new branch test
 
 DECLARE @DATABASE_SOURCE AS VARCHAR(30)
 SET @DATABASE_SOURCE = 'DW_CRM_MIGRATION' -- EX: AdventureWorks
