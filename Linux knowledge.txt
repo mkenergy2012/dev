@@ -1,0 +1,25 @@
+
+--new update
+grep -Ril "nyasha.vera@gmail.com" /
+
+
+search files for text
+
+find . -name '*.xml' -exec grep -i 'madurai.karthikeyan@gmail.com' {} \; -print
+
+
+find . -name '*.php' -exec grep -i 'esign.php' {} \; -print
+
+
+--find and remove file
+
+find /tlen3o/fmw/product/111/webtire_111/Oracle_WT_PHP/instances/wt_php_instance/config/OHS/wt_php_ohs1/htdocs/contracts/docusign/media -mtime +2 -type f -size +1k -exec rm {} \; | awk '{ print $9 ": " $5 }'
+
+
+find . -name '*.sql' -exec grep -i 'SF_OTO_SUBASSIGNMENT' {} \; -print
+
+find . -name '*.*' -exec grep -i 'SF_OTO_SUBASSIGNMENT' {} \; -print
+
+
+find . -maxdepth 1 -type f -name '*_2016*.xml' -delete
+
